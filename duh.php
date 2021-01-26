@@ -50,7 +50,7 @@ if($targetbuy > 14200){
     echo "MODAL 100jt dapet ".buy($modal, floor($targetbuy))." USDT di harga $targetbuy\n".chr(10);
     echo "JUAL ".buy($modal, floor($targetbuy))." USDT dapet ".rupiah(buy($modal, floor($targetbuy)) * $targetsell)."".chr(10);
     $opit = (buy($modal, floor($targetbuy)) * $targetsell) - $modal;
-    echo "OPIT: $opit".chr(10);
+    echo "OPIT: ".rupiah($opit)."".chr(10);
     	
 }
 
