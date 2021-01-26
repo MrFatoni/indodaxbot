@@ -36,8 +36,8 @@ cekharga:
     $priceBuy = $request['tickers'][$pair."_idr"]['buy'];
     $priceSell = $request['tickers'][$pair."_idr"]['sell'];
     $priceLow = $request['tickers'][$pair."_idr"]['low'];
-    $targetbuy = $priceLow + rand(20,50);
-    $targetsell = $targetbuy + 160;//14300;
+    $targetbuy = 14100;//$priceLow + rand(20,50);
+    $targetsell = 14260;// opit 1jtan lek tukune 100jt $targetbuy + 160;//14300;
    // echo " Buy ".rupiah($priceSell)." - Sell ".rupiah($priceBuy)." - TargetBuy $targetbuy - ".$request['tickers'][$pair."_idr"]['last']."\n";
 
 
@@ -48,8 +48,8 @@ if($targetbuy > 14200){
 }else{
     //echo "Buy ".rupiah($priceSell)." - Sell ".rupiah($priceBuy)." - TargetBuy $targetbuy #".$request['tickers'][$pair."_idr"]['last']."\n".chr(10);
     echo "MODAL 100jt dapet ".buy($modal, floor($targetbuy))." USDT di harga $targetbuy\n".chr(10);
-    echo "JUAL ".buy($modal, floor($targetbuy))." USDT dapet ".rupiah(buy($modal, floor($targetbuy)) * $priceBuy)."".chr(10);
-    $opit = (buy($modal, floor($targetbuy)) * $priceBuy) - $modal;
+    echo "JUAL ".buy($modal, floor($targetbuy))." USDT dapet ".rupiah(buy($modal, floor($targetbuy)) * $targetsell)."".chr(10);
+    $opit = (buy($modal, floor($targetbuy)) * $targetsell) - $modal;
     echo "OPIT: $opit".chr(10);
     	
 }
